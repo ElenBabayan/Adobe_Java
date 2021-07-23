@@ -1,5 +1,4 @@
 package com.aca.week3.Homework02;
-
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -17,7 +16,7 @@ public class ProgressAware {
         System.out.println("Progress became invisible");
     }
 
-    public boolean isProgressVisible() {
+    private boolean isProgressVisible() {
             return progressStatus;
     }
 

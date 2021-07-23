@@ -1,7 +1,5 @@
 package com.aca.week3.Homework02;
-
 import com.aca.week3.Homework02.ProgressAware;
-
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -26,7 +24,7 @@ public class LineProgressAware extends ProgressAware {
         double currTime = 0;
         while(currTime <= seconds) {
             TimeUnit.SECONDS.sleep(1);
-            System.out.println( "Line width: " + (int)(lineLength * currTime / seconds) +
+            System.out.println( "Line width: " + (int) (lineLength * currTime / seconds) +
                     ", Progress length: " + (int) currTime  );
             currTime++;
         }

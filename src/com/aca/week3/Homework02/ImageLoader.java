@@ -1,5 +1,4 @@
 package com.aca.week3.Homework02;
-
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -32,7 +31,7 @@ public class ImageLoader extends LineProgressAware {
         System.out.println("Image loaded: " + img.createGraphics());
     }
 
-    public boolean isImageLoaded() {
+    private boolean isImageLoaded() {
         return isLoaded;
     }
 
@@ -43,5 +42,4 @@ public class ImageLoader extends LineProgressAware {
         ImageLoader imageLoader = new ImageLoader(500, url);
         imageLoader.load();
     }
-
 }
