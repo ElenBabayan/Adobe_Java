@@ -28,5 +28,4 @@ public enum ColorEnum {
         this.green = green;
         this.blue = blue;
     }
-
 }

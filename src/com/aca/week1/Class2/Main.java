@@ -1,4 +1,4 @@
-package com.aca.week1;
+package com.aca.week1.Class2;
 
 import com.aca.week2.Class4.Person;
 
