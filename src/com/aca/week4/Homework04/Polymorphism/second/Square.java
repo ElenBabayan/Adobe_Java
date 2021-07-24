@@ -2,15 +2,15 @@ package com.aca.week4.Homework04.Polymorphism.second;
 
 public class Square implements Shape  {
 
-    private final double sideLength;
+    private final Edge a;
 
-    public Square(double sideLength) {
-        this.sideLength = sideLength;
+    public Square(Edge a) {
+        this.a = a;
     }
 
     @Override
     public double calculateArea() {
-        return sideLength * sideLength;
+        return a.getLength() * a.getLength();
     }
 
     @Override

@@ -7,11 +7,6 @@ public class Shark implements WaterAnimal {
     }
 
     @Override
-    public void isRunning() {
-        System.out.println("Shark is not running");
-    }
-
-    @Override
     public void isSwimming() {
         System.out.println("Shark is swimming");
     }

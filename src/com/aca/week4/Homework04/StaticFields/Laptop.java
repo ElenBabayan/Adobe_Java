@@ -1,11 +1,10 @@
 package com.aca.week4.Homework04.StaticFields;
 
 public class Laptop {
-    public static int counterPublic;
-    public static int counterProtected;
+    private static int counterPublic;
+    private static int counterProtected;
     private int counter;
     private String model;
-
 
     public Laptop() {
         counterPublic++;
@@ -22,5 +21,13 @@ public class Laptop {
 
     public int getCounter() {
         return counter;
+    }
+
+    public static int getCounterPublic() {
+        return counterPublic;
+    }
+
+    public static int getCounterProtected() {
+        return counterProtected;
     }
 }

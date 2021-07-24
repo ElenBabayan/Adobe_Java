@@ -6,6 +6,5 @@ public class MonthsMain {
         Months months = Months.AUGUST;
         System.out.println(Months.getMonth(8));
         System.out.println(Months.getMonth(1));
-
     }
 }

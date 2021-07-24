@@ -9,8 +9,8 @@ public class LaptopMain {
         Laptop laptop4 = new Laptop("Dell");
         Laptop laptop5 = new Laptop("Asus");
 
-        System.out.println(Laptop.counterPublic);
-        System.out.println(Laptop.counterProtected);
+        System.out.println(Laptop.getCounterPublic());
+        System.out.println(Laptop.getCounterProtected());
 
         laptop5.setCounter(1);
         System.out.println(laptop5.getCounter());

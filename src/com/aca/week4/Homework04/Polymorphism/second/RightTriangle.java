@@ -2,17 +2,17 @@ package com.aca.week4.Homework04.Polymorphism.second;
 
 public class RightTriangle implements Shape {
 
-    private final double base;
-    private final double height;
+    private final Edge base;
+    private final Edge height;
 
-    public RightTriangle(double base, double height) {
+    public RightTriangle(Edge base, Edge height) {
         this.base = base;
         this.height = height;
     }
 
     @Override
     public double calculateArea() {
-        return base * height / 2;
+        return base.getLength() * height.getLength() / 2;
     }
 
     @Override

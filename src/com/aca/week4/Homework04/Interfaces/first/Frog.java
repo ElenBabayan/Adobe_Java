@@ -1,6 +1,6 @@
 package com.aca.week4.Homework04.Interfaces.first;
 
-public class Frog implements Animal{
+public class Frog implements LandAnimal, WaterAnimal {
     @Override
     public void isBreathing() {
         System.out.println("Frog is breathing");
@@ -15,6 +15,4 @@ public class Frog implements Animal{
     public void isSwimming() {
         System.out.println("Frog is swimming");
     }
-
-
 }
