@@ -35,6 +35,7 @@ public class LinkedIntBuffer extends IntBuffer {
 
         System.out.println(linkedIntBuffer.toString());
 
+
         IntBuffer intBuffer = new IntBuffer();
         intBuffer.setValue(5);
         System.out.println(intBuffer.toString());
