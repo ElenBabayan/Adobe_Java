@@ -26,7 +26,7 @@ public class Main {
 //        change(color1);
 //
 //        System.out.println(color1);
-////
+//
 //
 //        final Point p = new PointImmutable(1,2,new Color(9,9,9));
 //        Color color = p.getColor();
@@ -68,7 +68,6 @@ public class Main {
     /*
     Main thread - step by step executed
     as soon as sees exception, program stops
-
      */
     public static double divide(int a, int b) {
         return a / b;
