@@ -15,7 +15,7 @@ public class StackImplement {
 
         // GENERICS => TYPE SAFETY
         Stack<Integer> myStack = new StackDefault<>();
-        myStack.push(1);
+        //myStack.push(1);
         final Integer popped = myStack.pop();
         System.out.println(popped);
 

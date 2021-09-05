@@ -1,5 +1,6 @@
 package com.aca.week4.Class8.clone;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 public class User implements Cloneable {
@@ -7,6 +8,7 @@ public class User implements Cloneable {
     private String name;
     private int age;
     private User friend;
+
 
     public User getFriend() {
         return friend;
