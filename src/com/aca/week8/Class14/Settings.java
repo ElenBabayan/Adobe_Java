@@ -1,6 +1,8 @@
 package com.aca.week8.Class14;
 
-public class Settings {
+import java.io.Serializable;
+
+public class Settings implements Serializable {
 
     private int width;
 
