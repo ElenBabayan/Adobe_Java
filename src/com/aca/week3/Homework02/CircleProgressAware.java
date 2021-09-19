@@ -1,5 +1,5 @@
 package com.aca.week3.Homework02;
-import com.aca.week3.Homework02.ProgressAware;
+
 import java.util.concurrent.TimeUnit;
 
 public class CircleProgressAware extends ProgressAware {

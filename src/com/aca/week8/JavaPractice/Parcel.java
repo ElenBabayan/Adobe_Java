@@ -1,7 +1,5 @@
 package com.aca.week8.JavaPractice;
 
-import java.io.Serializable;
-
 class Parcel<T extends Gift , Wrappable , Exchangeable>{
     private T t;
     public void set( T t) {

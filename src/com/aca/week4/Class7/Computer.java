@@ -1,7 +1,5 @@
 package com.aca.week4.Class7;
 
-import java.util.Comparator;
-
 // SSD is a Storage
 // HDD is a Storage
 public class Computer { // Computer has a Storage

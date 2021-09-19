@@ -1,7 +1,5 @@
 package com.aca.week5.Homework05.task3.part3;
 
-import com.aca.week5.Homework05.task3.part3.Processor;
-
 public class ArmProcessor implements Processor {
     @Override
     public long calculateBinary(long decimal) {

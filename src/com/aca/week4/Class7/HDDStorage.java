@@ -1,9 +1,5 @@
 package com.aca.week4.Class7;
 
-import com.aca.week3.Class6.StartPoint1;
-
-import java.util.concurrent.TimeUnit;
-
 public class HDDStorage implements Storage {
 
     private Integer memory;

@@ -1,9 +1,6 @@
 package com.aca.week9.Class15.executable;
 
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.PrintWriter;
 
 public class FactorialExecutable implements Executable {
 

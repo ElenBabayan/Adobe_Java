@@ -1,7 +1,5 @@
 package com.aca.week4.Class7;
 
-import java.util.concurrent.TimeUnit;
-
 public class SSDStorage implements Storage {
 
     private Integer memory;

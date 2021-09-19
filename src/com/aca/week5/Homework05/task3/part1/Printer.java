@@ -2,10 +2,10 @@ package com.aca.week5.Homework05.task3.part1;
 
 import com.aca.week5.Homework05.task1.User;
 import com.aca.week5.Homework05.task1.UserGroup;
-import com.aca.week5.Homework05.task2.part4.Color;
-import com.aca.week5.Homework05.task2.part4.ColoredTriangle;
 import com.aca.week5.Homework05.task2.part2.ImmutablePoint;
 import com.aca.week5.Homework05.task2.part3.Triangle;
+import com.aca.week5.Homework05.task2.part4.Color;
+import com.aca.week5.Homework05.task2.part4.ColoredTriangle;
 
 public class Printer {
 

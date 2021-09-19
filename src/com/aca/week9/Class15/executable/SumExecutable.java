@@ -1,9 +1,7 @@
 package com.aca.week9.Class15.executable;
 
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.PrintWriter;
+import java.util.TreeSet;
 
 public class SumExecutable implements Executable {
     private int num;
@@ -16,6 +14,8 @@ public class SumExecutable implements Executable {
 
     @Override
     public void execute() throws FileNotFoundException {
+        TreeSet<Integer> t = new TreeSet<>();
+
         int result = 0;
         for (int i = 1; i <= num; i++) {
             result += i;

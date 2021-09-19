@@ -1,7 +1,5 @@
 package com.aca.week5.Homework05.task2.part1;
 
-import com.aca.week6.Class11.Objects;
-
 public class AssertionUtils {
     public static void assertEquals(int val1, int val2) {
         if(val1 != val2) {

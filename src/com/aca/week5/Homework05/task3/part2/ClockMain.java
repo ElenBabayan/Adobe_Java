@@ -1,6 +1,5 @@
 package com.aca.week5.Homework05.task3.part2;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ClockMain {

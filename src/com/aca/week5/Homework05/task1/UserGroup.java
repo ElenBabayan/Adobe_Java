@@ -1,6 +1,5 @@
 package com.aca.week5.Homework05.task1;
 
-import java.security.InvalidParameterException;
 import java.util.Arrays;
 
 public class UserGroup {

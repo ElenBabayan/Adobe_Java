@@ -1,8 +1,5 @@
 package com.aca.week4.Class8.clone;
 
-import java.math.BigDecimal;
-import java.util.Objects;
-
 public class User implements Cloneable {
 
     private String name;
