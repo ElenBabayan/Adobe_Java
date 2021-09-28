@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="postgresql-42.2.16">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/HikariCP-3.1.0.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/slf4j-api-1.7.25.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/postgresql-42.2.16.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -29,17 +29,22 @@ public class SafeCartesianSystem {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                safeCartesianSystem.setX(1);
-                safeCartesianSystem.setY(1);
-
-                safeCartesianSystem.setX(-1);
-                safeCartesianSystem.setY(-1);
+                synchronized (safeCartesianSystem) {
+                    safeCartesianSystem.setX(1);
+                    safeCartesianSystem.setY(1);
+                }
+                synchronized (safeCartesianSystem) {
+                    safeCartesianSystem.setX(-1);
+                    safeCartesianSystem.setY(-1);
+                }
             }
         }).start();
 
         Thread.sleep(2000);
 
-        System.out.println(safeCartesianSystem.getX());
-        System.out.println(safeCartesianSystem.getY());
+        synchronized (safeCartesianSystem) {
+            System.out.println(safeCartesianSystem.getX());
+            System.out.println(safeCartesianSystem.getY());
+        }
     }
 }

@@ -56,7 +56,6 @@ public class NumbersGenerator<T extends Number> {
         for (int i = 0; i < count; i++) {
             list.add(new Random().nextDouble());
         }
-        ;
 
         print(list);
 
