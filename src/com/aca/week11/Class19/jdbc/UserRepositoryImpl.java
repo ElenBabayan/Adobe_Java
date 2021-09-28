@@ -17,7 +17,6 @@ public class UserRepositoryImpl implements UserRepository {
         this.password = password;
     }
 
-
     @Override
     public void create(String name, int age) throws SQLException {
 
@@ -27,7 +26,6 @@ public class UserRepositoryImpl implements UserRepository {
         statement.execute("******");
         statement.close();
         connection.close();
-
     }
 
     @Override

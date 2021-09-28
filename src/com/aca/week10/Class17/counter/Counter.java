@@ -1,4 +1,4 @@
-package com.aca.week10.Class17;
+package com.aca.week10.Class17.counter;
 
 public interface Counter {
 

@@ -84,5 +84,4 @@ public class XY {
         Thread.sleep(300);
         System.out.println(xy.getX() + " " + xy.getY());
     }
-
 }

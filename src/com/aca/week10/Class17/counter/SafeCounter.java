@@ -1,4 +1,6 @@
-package com.aca.week10.Class17;
+package com.aca.week10.Class17.counter;
+
+import com.aca.week10.Class17.counter.Counter;
 
 public class SafeCounter implements Counter {
 

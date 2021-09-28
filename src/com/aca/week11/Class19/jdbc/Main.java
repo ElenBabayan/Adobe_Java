@@ -10,12 +10,12 @@ public class Main {
 
     public static void main(String[] args) throws SQLException {
         /*
-        DriverManager.getC
+        DriverManager
         implementacia handisacox class piti veradardzni
         vory goyutyun chuni => exception
         ayd classeri hamaxumby kochvum e driver
-
          */
+
         Connection connection = DriverManager.getConnection(
                 "jdbc:postgresql://localhost:5434/aca",
                 "postgres",
@@ -34,9 +34,7 @@ public class Main {
             statement.execute("insert into users (name, age) " +
                     "values ('user" + i + "'," + new Random().nextInt(50) + ")");
         }
-
         statement.close();
         connection.close();
     }
-
 }

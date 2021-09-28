@@ -4,8 +4,6 @@ import java.util.Random;
 import java.util.concurrent.*;
 
 public class FutureMain {
-    // 5 vrk sleep , returns random number, print in Mainthread
-    // execService , submit , future ic get
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         ExecutorService executorService = Executors.newCachedThreadPool();
@@ -16,8 +14,7 @@ public class FutureMain {
                 Thread.sleep(5000);
                 throw new IllegalStateException("not valid state"); // throws Execution exception
                 // RETHROW another exception, try catch
-            //    return new Random().nextInt();
-  
+                // return new Random().nextInt();
             }
         });
 
@@ -27,14 +24,3 @@ public class FutureMain {
         executorService.shutdown();
     }
 }
-
-
-/*
-docker ps
-
-docker exec -it *id* bash
-
-docker run -p 6666:5432 postgres:9.6.12
-
-
- */

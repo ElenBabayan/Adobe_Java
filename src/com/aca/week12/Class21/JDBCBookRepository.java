@@ -1,11 +1,10 @@
-package com.aca.week11.Class20;
+package com.aca.week12.Class21;
 
+import com.aca.week11.Class20.BookRepository;
 import com.aca.week11.Homework08.proxybook.Book;
 
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class JDBCBookRepository implements BookRepository {
 
@@ -13,6 +12,48 @@ public class JDBCBookRepository implements BookRepository {
 
     public JDBCBookRepository(DataSource dataSource) {
         this.dataSource = dataSource;
+    }
+
+
+    public Book getByTitle(final String title)  {
+        Connection connection = null;
+        Statement statement = null;
+
+        Book book = new Book();
+        try {
+            connection = dataSource.getConnection();
+            statement = connection.createStatement();
+
+            final ResultSet resultSet = statement.executeQuery("select * from books where title = '" +  title + "';");
+
+            ResultSetMetaData metaData = resultSet.getMetaData();
+
+            metaData.getColumnCount();
+            metaData.getColumnName(1);
+            resultSet.next();
+
+            String id = resultSet.getString("id");
+            String bookTitle = resultSet.getString("title");
+            String bookAuthor = resultSet.getString("author");
+
+
+            book.setTitle(bookTitle);
+            book.setAuthor(bookAuthor);
+            System.out.println(connection);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                statement.close();
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return book;
     }
 
     @Override

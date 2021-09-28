@@ -6,10 +6,10 @@ public class ExecutorImpl implements Executor {
 
     @Override
     public void execute(Runnable command) {
-        command.run();  // kashxati en threadum voric runy kanchvel a, es depqum Main thready
-     //   new Thread(command).start();
+        command.run();
+        // kashxati en threadum voric runy kanchvel a, es depqum Main thready
+        //   new Thread(command).start();
     }
-
 
     public static void main(String[] args) {
         ExecutorImpl executor = new ExecutorImpl();

@@ -8,12 +8,10 @@ import java.io.PrintWriter;
 public class FilePrinterRunnable implements Runnable{
 
     // file stana drsic
-
     // file i mej enqan tpi minchev interrupt kanchen
     // file stop lini henc kanchen
 
     private File file;
-
 
     public void run() {
 

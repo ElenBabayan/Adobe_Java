@@ -17,13 +17,6 @@ public class Buffer {
         final String tmp = this.value;
         this.value = null;
 
-//        if(value == null) {
-//            wait();
-//        }
-// paymany anverj petqa stugel => while
-
-  //      final String tmp = this.value;
-
         System.out.println("Reading from buffer: " + tmp);
         notifyAll();
         return tmp;

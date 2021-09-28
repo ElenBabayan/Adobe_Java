@@ -11,6 +11,7 @@ public class Test implements Runnable {
         AppUtils.sleep(5);
         thread.interrupt();
     }
+
     private final PrintWriter printWriter;
 
     public Test(PrintWriter printWriter) {
@@ -19,7 +20,7 @@ public class Test implements Runnable {
 
     @Override
     public void run() {
-        while(!Thread.currentThread().isInterrupted()){
+        while (!Thread.currentThread().isInterrupted()) {
             printWriter.println("abc");
             AppUtils.sleep(1);
         }

@@ -1,6 +1,8 @@
-package com.aca.week10.Class17;
+package com.aca.week10.Class17.counter;
 
-public class UnsafeCounter implements Counter{
+import com.aca.week10.Class17.counter.Counter;
+
+public class UnsafeCounter implements Counter {
 
     private int value;
 

@@ -1,7 +1,7 @@
 package com.aca.week10.Class17;
 
 public class Utils {
-    private  Utils(int x, int y) {
+    private Utils(int x, int y) {
 
     }
 
@@ -9,16 +9,14 @@ public class Utils {
         int x = xy.getX();
         int y = xy.getY();
 
-        while(true) {
+        while (true) {
             try {
                 Thread.sleep(1);
-            }
-            catch (InterruptedException e) {
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
 
     }
-
 
 }

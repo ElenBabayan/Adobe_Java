@@ -26,7 +26,7 @@ public class Main {
 
         UserRepositoryImpl userRepository = new UserRepositoryImpl(getHikariDataSource());
 
-         userRepository.create();
+        userRepository.create();
 
         User user1 = new User();
         for (int i = 0; i < 100; i++) {
@@ -36,8 +36,7 @@ public class Main {
             userRepository.save(user1);
         }
 
-    //     userRepository.deleteAll();
+        //     userRepository.deleteAll();
 
     }
-
 }

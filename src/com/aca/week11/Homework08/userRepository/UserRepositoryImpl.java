@@ -22,11 +22,10 @@ public class UserRepositoryImpl implements UserRepository {
             connection = dataSource.getConnection();
             statement = connection.createStatement();
             statement.execute(("insert into users (name, surname, age) values ('" + user.getName() +
-                    "','" + user.getSurname() + "','" + user.getAge()  + "');"));
+                    "','" + user.getSurname() + "','" + user.getAge() + "');"));
         } catch (SQLException e) {
             e.printStackTrace();
-        }
-        finally {
+        } finally {
             try {
                 statement.close();
                 connection.close();
@@ -47,8 +46,7 @@ public class UserRepositoryImpl implements UserRepository {
 
         } catch (SQLException e) {
             e.printStackTrace();
-        }
-        finally {
+        } finally {
             try {
                 statement.close();
                 connection.close();
@@ -68,8 +66,7 @@ public class UserRepositoryImpl implements UserRepository {
 
         } catch (SQLException e) {
             e.printStackTrace();
-        }
-        finally {
+        } finally {
             try {
                 statement.close();
                 connection.close();
