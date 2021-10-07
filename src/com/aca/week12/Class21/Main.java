@@ -20,7 +20,9 @@ public class Main {
         USERNAME = "postgres";
         PASSWORD = "postgres"; // DataSource interface
 
-        JDBCBookRepository bookRepository1 = new JDBCBookRepository(getHikariDataSource());
+
+        JDBCBookRepository bookRepository1 = new JDBCBookRepository(getHikariDataSource(),
+                new JDBCPersonRepository(getHikariDataSource()));
 
 //        for (int i = 0; i < 100; i++) {
 //            bookRepository1.create(new Book("Java" + i, "Author" + i));
@@ -45,4 +47,6 @@ public class Main {
         config.setPassword(PASSWORD);
         return new HikariDataSource(config);
     }
+    
+    // Title:java
 }

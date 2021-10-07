@@ -10,8 +10,11 @@ public class JDBCBookRepository implements BookRepository {
 
     private final DataSource dataSource;
 
-    public JDBCBookRepository(DataSource dataSource) {
+    private PersonRepository personRepository;
+
+    public JDBCBookRepository(DataSource dataSource, JDBCPersonRepository personRepository) {
         this.dataSource = dataSource;
+        this.personRepository = personRepository;
     }
 
 
@@ -35,7 +38,6 @@ public class JDBCBookRepository implements BookRepository {
             String id = resultSet.getString("id");
             String bookTitle = resultSet.getString("title");
             String bookAuthor = resultSet.getString("author");
-
 
             book.setTitle(bookTitle);
             book.setAuthor(bookAuthor);
