@@ -1,37 +1,35 @@
-package com.aca;
+package com.aca.repository;
 
+import com.aca.entity.Token;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-public class HibernateUserRepository implements UserRepository{
-
+public class HibernateTokenRepository implements TokenRepository {
     private final SessionFactory sessionFactory;
 
-    public HibernateUserRepository(SessionFactory sessionFactory) {
+    public HibernateTokenRepository(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
 
     @Override
-    public User create(User user) {
+    public Token create(Token token) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        session.save(user);
-
+        session.save(token);
         transaction.commit();;
         session.close();
-
-        return user;
+        return token;
     }
 
     @Override
-    public User getById(Long id) {
+    public Token getById(Long id) {
         Session session = sessionFactory.openSession();
         Transaction transaction= session.beginTransaction();
-        User user = session.find(User.class, id);
+        Token token = session.find(Token.class, id);
         transaction.commit();
         session.close();
-        return user;
+        return token;
     }
 }

@@ -1,13 +1,11 @@
-package com.aca;
+package com.aca.entity;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Objects;
 
 @Entity
 @Table(name = "USERS")
@@ -23,11 +21,11 @@ public class User {
 
     @Column(name = "lastname")
     private String secondName;
-    @Column(name = "username")
+    @Column(name = "username", nullable = false, unique = true, length =  50)
     private String username;
-    @Column(name = "password")
+    @Column(name = "password", nullable = false)
     private String password;
-    @Column(name = "created_at")
+    @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
     @OneToMany(mappedBy = "user",fetch = FetchType.EAGER) // default is lazy
@@ -63,22 +61,6 @@ public class User {
                 ", createdAt=" + createdAt +
                 ", tokens=" + tokens +
                 '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-
-        if (o == null || getClass() != o.getClass()) return false;
-
-        User user = (User) o;
-
-        return new EqualsBuilder().append(id, user.id).append(firstName, user.firstName).append(secondName, user.secondName).append(username, user.username).append(password, user.password).append(createdAt, user.createdAt).append(tokens, user.tokens).isEquals();
-    }
-
-    @Override
-    public int hashCode() {
-        return new HashCodeBuilder(17, 37).append(id).append(firstName).append(secondName).append(username).append(password).append(createdAt).append(tokens).toHashCode();
     }
 
     public Long getId() {
@@ -127,5 +109,21 @@ public class User {
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+
+        if (o == null || getClass() != o.getClass()) return false;
+
+        User user = (User) o;
+
+        return new EqualsBuilder().append(id, user.id).append(firstName, user.firstName).append(secondName, user.secondName).append(username, user.username).append(password, user.password).append(createdAt, user.createdAt).append(tokens, user.tokens).isEquals();
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37).append(id).append(firstName).append(secondName).append(username).append(password).append(createdAt).append(tokens).toHashCode();
     }
 }

@@ -1,4 +1,6 @@
-package com.aca;
+package com.aca.repository;
+
+import com.aca.entity.Token;
 
 public interface TokenRepository {
     Token create(Token token);

@@ -1,17 +1,23 @@
 package com.aca;
 
-import org.hibernate.Session;
+import com.aca.entity.Token;
+import com.aca.entity.User;
+import com.aca.mapper.UserDetailsModel;
+import com.aca.mapper.UserMapper;
+import com.aca.mapper.UserMapperImpl;
+import com.aca.repository.HibernateUserRepository;
+import com.aca.service.user.UserCreateParams;
+import com.aca.service.user.UserService;
+import com.aca.service.user.UserServiceImpl;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
-
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.UUID;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws JsonProcessingException {
+        /*
         Configuration configuration = new Configuration();
         configuration.addAnnotatedClass(User.class);
         configuration.addAnnotatedClass(Token.class);
@@ -47,7 +53,7 @@ public class Main {
                 "username",
                 "password",
                 LocalDateTime.now());
-        User savedUser = userRepository.create(user);
+        User savedUser = userRepository.save(user);
         token = new Token(UUID.randomUUID().toString(), user, LocalDateTime.now());
         Token savedToken = tokenRepository.create(token);
 
@@ -67,5 +73,37 @@ public class Main {
         session.close();
 
         // in DB - sessionFactory - configs
+
+         */
+
+        Configuration configuration = new Configuration();
+        configuration.addAnnotatedClass(User.class);
+        configuration.addAnnotatedClass(Token.class);
+        SessionFactory sessionFactory = configuration.buildSessionFactory();
+
+        UserService userService = new UserServiceImpl(
+                new HibernateUserRepository(
+                        sessionFactory
+                )
+        );
+
+        User user = userService.create(
+                new UserCreateParams(
+                        "user1",
+                        "password1",
+                        "Name",
+                        "Surname"
+                )
+        );
+
+        UserMapper userMapper = new UserMapperImpl();
+        UserDetailsModel model = userMapper.map(user);
+        System.out.println(model);
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        String jsonString = objectMapper.writeValueAsString(model);
+
+        System.out.println(jsonString);
+
     }
 }
