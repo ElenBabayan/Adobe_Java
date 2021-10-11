@@ -6,7 +6,7 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "TWEET_HASHTAG_LINK")
+@Table(name = "tweet_hashtag_link")
 public class Tweet_Hashtag_Link {
 
     @Id

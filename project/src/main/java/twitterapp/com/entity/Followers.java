@@ -6,7 +6,7 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import javax.persistence.*;
 import java.sql.Timestamp;
 
-@Table(name = "FOLLOWER")
+@Table(name = "follower")
 @Entity
 public class Followers {
     @Id
@@ -19,18 +19,18 @@ public class Followers {
 
     @ManyToOne //many followers to one user
     @JoinColumn(name = "user_id")
-    private User user_id;
+    private Users users_id;
 
     @ManyToOne //many followings to one user
     @JoinColumn(name = "following_id") //???
-    private User following_id;
+    private Users following_id;
 
     public Followers() {
     }
 
-    public Followers(Timestamp created_at, User user_id, User following_id) {
+    public Followers(Timestamp created_at, Users users_id, Users following_id) {
         this.created_at = created_at;
-        this.user_id = user_id;
+        this.users_id = users_id;
         this.following_id = following_id;
     }
 
@@ -42,19 +42,19 @@ public class Followers {
         this.created_at = created_at;
     }
 
-    public User getUser_id() {
-        return user_id;
+    public Users getUser_id() {
+        return users_id;
     }
 
-    public void setUser_id(User user_id) {
-        this.user_id = user_id;
+    public void setUser_id(Users users_id) {
+        this.users_id = users_id;
     }
 
-    public User getFollowing_id() {
+    public Users getFollowing_id() {
         return following_id;
     }
 
-    public void setFollowing_id(User following_id) {
+    public void setFollowing_id(Users following_id) {
         this.following_id = following_id;
     }
 
@@ -66,12 +66,12 @@ public class Followers {
 
         Followers follower = (Followers) o;
 
-        return new EqualsBuilder().append(id, follower.id).append(created_at, follower.created_at).append(user_id, follower.user_id).append(following_id, follower.following_id).isEquals();
+        return new EqualsBuilder().append(id, follower.id).append(created_at, follower.created_at).append(users_id, follower.users_id).append(following_id, follower.following_id).isEquals();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(17, 37).append(id).append(created_at).append(user_id).append(following_id).toHashCode();
+        return new HashCodeBuilder(17, 37).append(id).append(created_at).append(users_id).append(following_id).toHashCode();
     }
 
     @Override
@@ -79,7 +79,7 @@ public class Followers {
         return "Follower{" +
                 "id=" + id +
                 ", created_at=" + created_at +
-                ", user_id=" + user_id +
+                ", user_id=" + users_id +
                 ", following_id=" + following_id +
                 '}';
     }

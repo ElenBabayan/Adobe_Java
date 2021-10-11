@@ -1,7 +1,7 @@
 package twitterapp.com.service.user;
 
 import org.mindrot.jbcrypt.BCrypt;
-import twitterapp.com.entity.User;
+import twitterapp.com.entity.Users;
 import twitterapp.com.repository.UserRepository;
 
 public class UserServiceImpl implements UserService {
@@ -13,17 +13,17 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User create(UserCreateParams userCreateParams) {
+    public Users create(UserCreateParams userCreateParams) {
 
-        final User user = new User();
-        user.setName(userCreateParams.getName());
-        user.setEmail(userCreateParams.getEmail());
-        user.setDate_of_birth(userCreateParams.getDate_of_birth());
-        user.setPassword(
+        final Users users = new Users();
+        users.setName(userCreateParams.getName());
+        users.setEmail(userCreateParams.getEmail());
+        users.setDateOfBirth(userCreateParams.getDate_of_birth());
+        users.setPassword(
                 BCrypt.hashpw(userCreateParams.getPassword(), BCrypt.gensalt(10))
         );
 
-        User savedUser = userRepository.save(user);
-        return savedUser;
+        Users savedUsers = userRepository.save(users);
+        return savedUsers;
     }
 }

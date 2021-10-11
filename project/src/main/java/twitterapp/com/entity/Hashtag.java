@@ -4,12 +4,12 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "HASHTAG")
+@Table(name = "hashtag")
 public class Hashtag {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "hashtag_generator")
     @SequenceGenerator(name = "hashtag_generator", sequenceName = "hashtag_id_seq", allocationSize = 1)
-    private long id;
+    private Long id;
 
     @Column(name = "hashtag")
     private String hashtag;

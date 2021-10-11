@@ -7,12 +7,12 @@ import java.sql.Timestamp;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "TWEET")
+@Table(name = "tweet")
 public class Tweet {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "my_generator")
     @SequenceGenerator(name = "my_generator", sequenceName = "users_id_seq", allocationSize = 1)
-    private long id;
+    private Long id;
 
     @Column(name = "content")
     private String content;
@@ -22,15 +22,15 @@ public class Tweet {
 
     @Column(name = "user_id")
     @ManyToOne // many tweets to one user
-    private User user_id;
+    private Users users_id;
 
     public Tweet() {
     }
 
-    public Tweet(String content, Timestamp created_at, User user_id) {
+    public Tweet(String content, Timestamp created_at, Users users_id) {
         this.content = content;
         this.created_at = created_at;
-        this.user_id = user_id;
+        this.users_id = users_id;
     }
 
     public long getId() {
@@ -57,12 +57,12 @@ public class Tweet {
         this.created_at = created_at;
     }
 
-    public User getUser_id() {
-        return user_id;
+    public Users getUser_id() {
+        return users_id;
     }
 
-    public void setUser_id(User user_id) {
-        this.user_id = user_id;
+    public void setUser_id(Users users_id) {
+        this.users_id = users_id;
     }
 
     @Override
@@ -73,12 +73,12 @@ public class Tweet {
 
         Tweet tweet = (Tweet) o;
 
-        return new EqualsBuilder().append(id, tweet.id).append(content, tweet.content).append(created_at, tweet.created_at).append(user_id, tweet.user_id).isEquals();
+        return new EqualsBuilder().append(id, tweet.id).append(content, tweet.content).append(created_at, tweet.created_at).append(users_id, tweet.users_id).isEquals();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(17, 37).append(id).append(content).append(created_at).append(user_id).toHashCode();
+        return new HashCodeBuilder(17, 37).append(id).append(content).append(created_at).append(users_id).toHashCode();
     }
 
     @Override
@@ -87,7 +87,7 @@ public class Tweet {
                 "id=" + id +
                 ", content='" + content + '\'' +
                 ", created_at=" + created_at +
-                ", user_id=" + user_id +
+                ", user_id=" + users_id +
                 '}';
     }
 }

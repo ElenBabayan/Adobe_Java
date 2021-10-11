@@ -1,8 +1,8 @@
 package twitterapp.com.service.user;
 
-import twitterapp.com.entity.User;
+import twitterapp.com.entity.Users;
 
 public interface UserService {
-    User create(UserCreateParams userCreateParams);
+    Users create(UserCreateParams userCreateParams);
 
 }

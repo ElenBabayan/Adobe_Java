@@ -1,6 +1,6 @@
 package twitterapp.com.repository;
 
-import com.aca.entity.User;
+import com.aca.class24.entity.User;
 
 public interface UserRepository {
 
